@@ -46,7 +46,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 2. Developer Score & AI Score (Line Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Developer Score & AI Score](/images/developer-score-and-ai-score.png)
 
 **Tür:** Çizgi Grafik  
 **Veri Kaynağı:** `git-stats` ve `cursor-metrics` index
@@ -66,7 +66,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 3. Commit Count & AI Accepted Count (Line Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Commit Count & AI Accepted Count](/images/commit-count-and-ai-accepted-count.png)
 
 **Tür:** Çizgi Grafik  
 **Veri Kaynağı:** `git-stats` ve `cursor-metrics` index
@@ -86,7 +86,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 4. Monthly Commit Count by Project (Stacked Bar Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Monthly Commit Count by Project](/images/monthly-commit-count-by-project.png)
 
 **Tür:** Yığın Bar Grafik  
 **Veri Kaynağı:** `git-stats` index
@@ -107,7 +107,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 5. Top Repositories by Score (Horizontal Bar Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Top Repositories by Score](/images/top-repositories-by-score.png)
 
 **Tür:** Yatay Bar Grafik  
 **Veri Kaynağı:** `git-stats` index
@@ -128,7 +128,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 6. Top Projects by Score (Horizontal Bar Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Top Projects by Score](/images/top-projects-by-score.png)
 
 **Tür:** Yatay Bar Grafik  
 **Veri Kaynağı:** `git-stats` index
@@ -149,7 +149,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 7. Commits Category (Donut Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Commits Category](/images/commits-category.png)
 
 **Tür:** Halka Grafik  
 **Veri Kaynağı:** `git-stats` index
@@ -171,7 +171,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 8. Repository Commits (Donut Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Repository Commits](/images/repository-commits.png)
 
 **Tür:** Halka Grafik  
 **Veri Kaynağı:** `git-stats` index
@@ -191,7 +191,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 9. Project Commits (Donut Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Project Commits](/images/project-commits.png)
 
 **Tür:** Halka Grafik  
 **Veri Kaynağı:** `git-stats` index
@@ -211,7 +211,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 10. Lines Deleted (Metric)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Lines Deleted](/images/lines-deleted.png)
 
 **Tür:** Metrik (Tek Sayı)  
 **Veri Kaynağı:** `git-stats` index
@@ -230,7 +230,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 11. Lines Added (Metric)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Lines Added](/images/lines-added.png)
 
 **Tür:** Metrik (Tek Sayı)  
 **Veri Kaynağı:** `git-stats` index
@@ -249,7 +249,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 12. Developer Count (Metric)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Developer Count](/images/developer-count.png)
 
 **Tür:** Metrik (Tek Sayı)  
 **Veri Kaynağı:** `git-stats` index
@@ -268,7 +268,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 13. Commits Per Hour of Day (Heat Map)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Commits Per Hour of Day](/images/commits-per-hour-of-day.png)
 
 **Tür:** Isı Haritası  
 **Veri Kaynağı:** `git-stats` index
@@ -295,7 +295,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 14. Commit Frequency (Metric)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Commit Frequency](/images/commit-frequency.png)
 
 **Tür:** Metrik (Duration)  
 **Veri Kaynağı:** `git-stats` index
@@ -320,7 +320,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 15. Commit Efficiency (Metric)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Commit Efficiency](/images/commit-efficiency.png)
 
 **Tür:** Metrik (Decimal Number)  
 **Veri Kaynağı:** `git-stats` index
@@ -347,7 +347,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 16. Top Developers by AI Score (Donut Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Top Developers by AI Score](/images/top-developers-by-ai-score.png)
 
 **Tür:** Halka Grafik  
 **Veri Kaynağı:** `cursor-metrics` index
@@ -368,7 +368,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 17. Top Developers by Score (Donut Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Top Developers by Score](/images/top-developers-by-score.png)
 
 **Tür:** Halka Grafik  
 **Veri Kaynağı:** `git-stats` index
@@ -389,7 +389,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 18. Developer Performance Table
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Developer Performance Table](/images/developer-performance-table.png)
 
 **Tür:** Veri Tablosu  
 **Veri Kaynağı:** `git-stats` ve `cursor-metrics` index
@@ -418,7 +418,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 19. Performance Distribution Analysis (Histogram)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Performance Distribution Analysis](/images/performance-distribution-analysis.png)
 
 **Tür:** Histogram (Dual Panel)  
 **Veri Kaynağı:** `git-stats` ve `cursor-metrics` index
@@ -444,7 +444,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 20. Developer Performance Transition Matrix
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Developer Performance Transition Matrix](/images/developer-performance-transition-matrix.png)
 
 **Tür:** Transition Matrix (Heat Map)  
 **Veri Kaynağı:** `git-stats` index
@@ -472,7 +472,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 21. Performance vs Activity Correlation - Efficiency Sweet Spots
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Performance vs Activity Correlation - Efficiency Sweet Spots](/images/performance-vs-activity-correlation-efficiency-sweet-spots.png)
 
 **Tür:** Scatter Plot  
 **Veri Kaynağı:** `git-stats` ve `cursor-metrics` index
@@ -507,7 +507,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 22. Developer Performance Comparison (AI vs Non-AI)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Developer Performance Comparison](/images/developer-performance-comparison.png)
 
 **Tür:** Grouped Bar Chart  
 **Veri Kaynağı:** `git-stats` ve `cursor-metrics` index
@@ -538,7 +538,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 23. Developer Performance Flow - Category Transitions Over Time
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Developer Performance Flow - Category Transitions Over Time](/images/developer-performance-flow-category-transitions-over-time.png)
 
 **Tür:** Flow Diagram (Sankey-like)  
 **Veri Kaynağı:** `git-stats` index
@@ -569,7 +569,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 24. Developer Performance Matrix: AI Score vs Commit Score
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![Developer Performance Matrix: AI Score vs Commit Score](/images/developer-performance-matrix-ai-score-vs-commit-score.png)
 
 **Tür:** Scatter Plot (Quadrant Analysis)  
 **Veri Kaynağı:** `git-stats` ve `cursor-metrics` index
@@ -601,7 +601,7 @@ Commit Frequency = (time_range / 1000) / (commit_count + 1) / 1200
 
 ### 25. AI Acceptance Rate (Metric)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![AI Acceptance Rate](/images/ai-acceptance-rate.png)
 
 **Tür:** Metrik (Percentage)  
 **Veri Kaynağı:** `cursor-metrics` index
@@ -631,7 +631,7 @@ AI Acceptance Rate = (sum(totalAccepts) / sum(totalApplies)) × 100
 
 ### 26. File Types: Heavy AI Users vs No AI Users
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![File Types: Heavy AI Users vs No AI Users](/images/file-types-heavy-ai-users-vs-no-ai-users.png)
 
 **Tür:** Grouped Bar Chart  
 **Veri Kaynağı:** `git-stats` ve `cursor-metrics` index
@@ -665,7 +665,7 @@ AI Acceptance Rate = (sum(totalAccepts) / sum(totalApplies)) × 100
 
 ### 27. DORA Lead Time Average by Team
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![DORA Lead Time Average by Team](/images/dora-lead-time-average-by-team.png)
 
 **Tür:** Bar Chart (Performance Level Colored)  
 **Veri Kaynağı:** `dora-lead-time` index
@@ -696,7 +696,7 @@ AI Acceptance Rate = (sum(totalAccepts) / sum(totalApplies)) × 100
 
 ### 28. DORA Lead Time Average by Product
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![DORA Lead Time Average by Product](/images/dora-lead-time-average-by-product.png)
 
 **Tür:** Bar Chart (Performance Level Colored)  
 **Veri Kaynağı:** `dora-lead-time` index
@@ -722,7 +722,7 @@ AI Acceptance Rate = (sum(totalAccepts) / sum(totalApplies)) × 100
 
 ### 29. DORA Deployment Frequency by Team
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![DORA Deployment Frequency by Team](/images/dora-deployment-frequency-by-team.png)
 
 **Tür:** Bar Chart (Performance Level Colored)  
 **Veri Kaynağı:** `dora-deployment-frequency` index
@@ -759,7 +759,7 @@ AI Acceptance Rate = (sum(totalAccepts) / sum(totalApplies)) × 100
 
 ### 30. DORA Deployment Frequency by Product
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![DORA Deployment Frequency by Product](/images/dora-deployment-frequency-by-product.png)
 
 **Tür:** Bar Chart (Performance Level Colored)  
 **Veri Kaynağı:** `dora-deployment-frequency` index
@@ -785,7 +785,7 @@ AI Acceptance Rate = (sum(totalAccepts) / sum(totalApplies)) × 100
 
 ### 31. DORA Change Failure Rate by Team
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![DORA Change Failure Rate by Team](/images/dora-change-failure-rate-by-team.png)
 
 **Tür:** Bar Chart (Performance Level Colored)  
 **Veri Kaynağı:** `dora-deployment-frequency` index
@@ -828,7 +828,7 @@ Change Failure Rate = (1 - ((Total Deployments - Hotfix Deployments) / Total Dep
 
 ### 32. DORA Change Failure Rate by Product
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![DORA Change Failure Rate by Product](/images/dora-change-failure-rate-by-product.png)
 
 **Tür:** Bar Chart (Performance Level Colored)  
 **Veri Kaynağı:** `dora-deployment-frequency` index
@@ -854,7 +854,7 @@ Change Failure Rate = (1 - ((Total Deployments - Hotfix Deployments) / Total Dep
 
 ### 33. DORA Metrics Product Performance Chart (Bubble Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![DORA Metrics Product Performance Chart](/images/dora-metrics-product-performance-chart.png)
 
 **Tür:** Bubble Chart (Multi-Dimensional)  
 **Veri Kaynağı:** `dora-deployment-frequency` ve `dora-lead-time` index
@@ -899,7 +899,7 @@ Change Failure Rate = (1 - ((Total Deployments - Hotfix Deployments) / Total Dep
 
 ### 34. DORA Metrics Team Performance Chart (Bubble Chart)
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![DORA Metrics Team Performance Chart](/images/dora-metrics-team-performance-chart.png)
 
 **Tür:** Bubble Chart (Multi-Dimensional)  
 **Veri Kaynağı:** `dora-deployment-frequency` ve `dora-lead-time` index
@@ -942,7 +942,7 @@ Change Failure Rate = (1 - ((Total Deployments - Hotfix Deployments) / Total Dep
 
 ### 35. AI Impact on Deployment Frequency
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![AI Impact on Deployment Frequency](/images/ai-impact-on-deployment-frequency.png)
 
 **Tür:** Multi-Layer Line Chart with Area Background  
 **Veri Kaynağı:** `dora-deployment-frequency`, `cursor-usage`, `cursor-usage-events` index
@@ -981,7 +981,7 @@ ai_activity_per_user = total_ai_activity / active_users (if > 0)
 
 ### 36. AI Usage vs Lead Time Analysis
 
-![Developer Score & AI Score](/images/developer-score-ai-score.png)
+![AI Usage vs Lead Time Analysis](/images/ai-usage-vs-lead-time-analysis.png)
 
 **Tür:** Scatter Plot with Regression Line  
 **Veri Kaynağı:** `dora-lead-time` ve `cursor-usage` index
