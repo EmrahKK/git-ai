@@ -46,7 +46,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 
 ### 2. Developer Score & AI Score (Line Chart)
 
-![Developer Score & AI Score](/images/developer-score-and-ai-score.png)
+![Developer Score & AI Score](/images/developer-score-ai-score.png)
 
 **Tür:** Çizgi Grafik  
 **Veri Kaynağı:** `git-stats` ve `cursor-metrics` index
