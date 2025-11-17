@@ -1,0 +1,29 @@
+# User Mapping File
+# Format: UserAlias-CorporateName
+# 
+# Bu dosya, Git commit'lerindeki ve Cursor API'deki kullanıcı ID'lerini
+# gerçek isimlere eşleştirir.
+#
+# Kullanım:
+# 1. Bu dosyayı 'users.txt' olarak kopyalayın
+# 2. Her satıra bir kullanıcı ekleyin
+# 3. Format: UserID-Full Name
+#
+# Örnek:
+
+U12345-John Doe
+U67890-Jane Smith
+U11223-Robert Johnson
+U44556-Emily Davis
+U77889-Michael Brown
+U33221-Sarah Wilson
+U99887-David Lee
+U66554-Jennifer Taylor
+
+# Not: 
+# - Her satır tek bir kullanıcı içermelidir
+# - Tire (-) karakteri ayırıcıdır, isimde tire olmamalıdır
+# - Boş satırlar ve # ile başlayan satırlar yok sayılır
+# - Git log'dan kullanıcı listesi almak için:
+#   git log --format='%an' | sort -u
+

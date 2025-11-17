@@ -1,0 +1,48 @@
+# Team Mapping File
+# Format: DeveloperName=TeamName
+#
+# Bu dosya, geliştiricileri takımlara atar.
+# DORA metrics'te ve dashboard'da takım bazlı analizler için kullanılır.
+#
+# Kullanım:
+# 1. Bu dosyayı 'teams.txt' olarak kopyalayın
+# 2. Her satıra bir geliştirici-takım eşleştirmesi ekleyin
+# 3. Format: Full Name=Team Name
+#
+# Örnek:
+
+# Backend Team
+John Doe=Backend Team
+Jane Smith=Backend Team
+Robert Johnson=Backend Team
+Michael Brown=Backend Team
+
+# Frontend Team
+Emily Davis=Frontend Team
+Sarah Wilson=Frontend Team
+Jennifer Taylor=Frontend Team
+
+# Mobile Team
+David Lee=Mobile Team
+Christopher Anderson=Mobile Team
+
+# DevOps Team
+Matthew Thomas=DevOps Team
+Daniel Martinez=DevOps Team
+
+# Data Team
+Jessica Garcia=Data Team
+Amanda Rodriguez=Data Team
+
+# QA Team
+James White=QA Team
+Lisa Harris=QA Team
+
+# Not:
+# - Her satır tek bir geliştirici içermelidir
+# - Eşittir (=) karakteri ayırıcıdır
+# - Geliştirici adı users.txt'teki ile eşleşmelidir
+# - Bir geliştirici sadece bir takımda olabilir
+# - Boş satırlar ve # ile başlayan satırlar yok sayılır
+# - Takım isimleri dashboard'da görünecektir
+
