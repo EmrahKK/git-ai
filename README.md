@@ -122,11 +122,6 @@ python scripts/cursor_metrics.py \
   --users-file scripts/users.txt
 ```
 
-6. **Kibana dashboard'u import edin:**
-- Kibana'da Stack Management > Saved Objects > Import
-- `dashboard-export.ndjson` dosyasını seçin
-
-Detaylı kurulum ve yapılandırma için [Setup Guide](repository/SETUP_GUIDE.md) dökümanına bakınız.
 
 ## 📈 Dashboard Bileşenleri
 
@@ -147,7 +142,7 @@ Detaylı kurulum ve yapılandırma için [Setup Guide](repository/SETUP_GUIDE.md
 - Cursor Score (AI kullanım etkinliği)
 - Geliştirici başına AI etkisi
 
-Detaylı metrik açıklamaları için [Metrics Guide](repository/METRICS_GUIDE.md) dökümanına bakınız.
+Detaylı metrik açıklamaları için [Metrics Guide](METRICS_GUIDE.md) dökümanına bakınız.
 
 ## 📊 Veri Yapıları
 
@@ -158,11 +153,11 @@ Her veri kaynağı Elasticsearch'te ayrı indexlerde saklanır:
 - `dora-lead-time`: Lead time verileri
 - `cursor-metrics`: AI kullanım metrikleri
 
-Detaylı veri yapıları için [Data Structure Guide](repository/DATA_STRUCTURE.md) dökümanına bakınız.
+Detaylı veri yapıları için [Data Structure Guide](DATA_STRUCTURE.md) dökümanına bakınız.
 
 ## 🔍 Dashboard Görselleri
 
-Dashboard, 30'dan fazla görselleştirme içerir. Tüm görsellerin detaylı açıklamaları [GitStatsDashboard.md](GitStatsDashboard.md) dosyasında mevcuttur.
+Dashboard, 30'dan fazla görselleştirme içerir. Tüm görsellerin detaylı açıklamaları [Widgets Guide](WIDGETS_GUIDE.md) dosyasında mevcuttur.
 
 ## 🤝 Katkıda Bulunma
 
