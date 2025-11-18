@@ -1,4 +1,4 @@
-# AI-Powered Developer Productivity Analytics
+# AI Destekli Geliştirici Verimlilik Analizi
 
 Geliştirici performansı ve AI kullanımının yazılım geliştirme süreçlerine etkisini ölçümlemek için tasarlanmış kapsamlı bir analiz ve görselleştirme platformu.
 
