@@ -10,8 +10,7 @@ Bu döküman, Kibana dashboard'unda bulunan tüm görsellerin (widget'ların) de
 - [Developer Performance Görselleri](#developer-performance-görselleri)
 - [AI Metrikleri Görselleri](#ai-metrikleri-görselleri)
 - [DORA Metrikleri Görselleri](#dora-metrikleri-görselleri)
-- [İleri Analiz Görselleri](#ileri-analiz-görselleri)
-
+- [İleri Analiz Görselleri](#i̇leri-analiz-görselleri)
 ---
 
 ## Git Commit Görselleri
