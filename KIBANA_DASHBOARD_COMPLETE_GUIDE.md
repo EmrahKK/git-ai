@@ -7,84 +7,112 @@
 
 ---
 
-## 📑 İçindekiler
+## 📋 Table of Contents
 
-### 1. [Genel Bakış](#genel-bakış)
-- Veri Kaynakları
-- Önemli Not
-- Amaç
+1. [📊 Genel Bakış](#genel-bakış)
+   - [Veri Kaynakları](#veri-kaynakları)
+   - [Önemli Not](#önemli-not)
+   - [Amaç](#amaç)
 
-### 2. [Proje Yapısı ve Mimari](#proje-yapısı-ve-mimari)
-- Mimari Diyagram
-- Klasör Yapısı
+2. [🏗️ Proje Yapısı ve Mimari](#proje-yapısı-ve-mimari)
+   - [Mimari Diyagram](#mimari-diyagram)
+   - [Klasör Yapısı](#klasör-yapısı)
 
-### 3. [Hızlı Başlangıç ve Kurulum](#hızlı-başlangıç-ve-kurulum)
-- Gereksinimler
-- Kurulum Adımları
+3. [🚀 Hızlı Başlangıç ve Kurulum](#hızlı-başlangıç-ve-kurulum)
+   - [Gereksinimler](#gereksinimler)
+   - [Bağımlılıkları Yükleyin](#1-bağımlılıkları-yükleyin)
+   - [Kullanıcı ve Takım Dosyalarını Yapılandırın](#2-kullanıcı-ve-takım-dosyalarını-yapılandırın)
+   - [Git Metriklerini Toplayın](#3-git-metriklerini-toplayın)
+   - [DORA Metriklerini Toplayın](#4-dora-metriklerini-toplayın-opsiyonel)
+   - [Cursor Metriklerini Toplayın](#5-cursor-metriklerini-toplayın-opsiyonel)
 
-### 4. [Veri Yapıları ve Kategoriler](#veri-yapıları-ve-kategoriler)
-- Git Commit Veri Yapısı
-- Alan Açıklamaları
+4. [📦 Veri Yapıları ve Kategoriler](#veri-yapıları-ve-kategoriler)
+   - [Git Commit Veri Yapısı](#git-commit-veri-yapısı)
+   - [Alan Açıklamaları](#alan-açıklamaları)
 
-### 5. [Commit Kategorileri](#commit-kategorileri)
-- Refactor (Yeniden Yapılandırma)
-- New Work (Yeni Çalışma)
-- Help Others (Başkalarına Yardım)
-- Churn/Rework (Sık Değişiklik/Yeniden Çalışma)
-- Kategori Dağılımı İdeali
+5. [📂 Commit Kategorileri](#commit-kategorileri)
+   - [🔨 Refactor (Yeniden Yapılandırma)](#1-🔨-refactor-yeniden-yapılandırma)
+   - [✨ New Work (Yeni Çalışma)](#2-✨-new-work-yeni-çalışma)
+   - [🤝 Help Others (Başkalarına Yardım)](#3-🤝-help-others-başkalarına-yardım)
+   - [🔄 Churn/Rework (Sık Değişiklik)](#4-🔄-churnrework-sık-değişikyeniden-çalışma)
+   - [Kategori Dağılımı İdeali](#kategori-dağılımı-i̇deali)
+   - [Commit Kategori Belirleme](#commit-kategori-belirleme)
 
-### 6. [Kategorizasyon Algoritmaları](#kategorizasyon-algoritmaları)
-- **6.1** [Dosya Kategorizasyon Akışı](#dosya-kategorizasyon-akışı)
-  - Algoritma Mantığı
-  - Karar Ağacı
-  - Formül ve Hesaplamalar
-- **6.2** [Commit Kategorizasyon Akışı](#commit-kategorizasyon-akışı)
-  - Ağırlıklı Skorlama Sistemi
-  - Formül ve Örnek Hesaplamalar
+6. [🔬 Kategorizasyon Algoritmaları](#kategorizasyon-algoritmaları)
+   - [6.1 Dosya Kategorizasyon Akışı](#61-dosya-kategorizasyon-akışı)
+     - [Algoritma Mantığı](#algoritma-mantığı)
+     - [Karar Ağacı](#karar-ağacı)
+     - [Formül ve Hesaplamalar](#formül-ve-hesaplamalar)
+     - [Örnekler](#örnekler)
+   - [6.2 Commit Kategorizasyon Akışı](#62-commit-kategorizasyon-akışı)
+     - [Ağırlıklı Skorlama Sistemi](#ağırlıklı-skorlama-sistemi)
+     - [Algoritma](#algoritma)
+     - [Formül](#formül)
+     - [Örnek Hesaplamalar](#örnek-hesaplamalar)
+     - [Ağırlık Sistemi Mantığı](#ağırlık-sistemi-mantığı)
 
-### 7. [Metrikler Rehberi](#metrikler-rehberi)
-- **7.1** Git Commit Metrikleri
-  - Commit Efficiency (cefficiency)
-  - Commit Impact
-  - Productive Score
-- **7.2** DORA Metrikleri
-  - Deployment Frequency
-  - Lead Time for Changes
-  - Change Failure Rate
-- **7.3** Cursor AI Metrikleri
-  - Acceptance Rate
-  - Cursor Score
+7. [🎯 Metrikler Rehberi](#metrikler-rehberi)
+   - [Git Commit Metrikleri](#git-commit-metrikleri)
+     - [Commit Efficiency (cefficiency)](#1-commit-efficiency-cefficiency)
+     - [Commit Impact](#2-commit-impact)
+     - [Productive Score](#3-productive-score)
+   - [DORA Metrikleri](#dora-metrikleri)
+     - [Deployment Frequency](#1-deployment-frequency-dağıtım-sıklığı)
+     - [Lead Time for Changes](#2-lead-time-for-changes-değişiklik-teslim-süresi)
+     - [Change Failure Rate](#3-change-failure-rate-değişiklik-başarısızlık-oranı)
+   - [Cursor AI Metrikleri](#cursor-ai-metrikleri)
+     - [Acceptance Rate](#1-acceptance-rate-kabul-oranı)
+     - [Cursor Score](#2-cursor-score-ai-kullanım-skoru)
 
-### 8. [Dashboard Görselleri](#dashboard-görselleri)
-- **8.1** Git Commit Görselleri (15 adet)
-- **8.2** Developer Performance Görselleri (9 adet)
-- **8.3** AI Metrikleri Görselleri (2 adet)
-- **8.4** DORA Metrikleri Görselleri (8 adet)
-- **8.5** İleri Analiz Görselleri (2 adet)
-- **8.6** Dashboard Yerleştirme ve Layout
-- **8.7** Filtreleme ve Interactivity
+8. [📊 Dashboard Görselleri](#dashboard-görselleri)
+   - [Git Commit Görselleri](#git-commit-görselleri)
+     - [1. Commit Statistics Details](#1-commit-statistics-details-data-table)
+     - [2. Developer Score & AI Score](#2-developer-score--ai-score-line-chart)
+     - [3-15. Diğer Commit Görselleri](#3-commit-count--ai-accepted-count-line-chart)
+   - [Developer Performance Görselleri](#developer-performance-görselleri)
+     - [16. Top Developers by AI Score](#16-top-developers-by-ai-score-donut-chart)
+     - [17-24. Diğer Performance Görselleri](#17-top-developers-by-score-donut-chart)
+   - [AI Metrikleri Görselleri](#ai-metrikleri-görselleri)
+     - [25. AI Acceptance Rate](#25-ai-acceptance-rate-metric)
+     - [26. File Types Comparison](#26-file-types-heavy-ai-users-vs-no-ai-users)
+   - [DORA Metrikleri Görselleri](#dora-metrikleri-görselleri)
+     - [27-34. DORA Görselleri](#27-dora-lead-time-average-by-team)
+   - [İleri Analiz Görselleri](#i̇leri-analiz-görselleri)
+     - [35. AI Impact on Deployment](#35-ai-impact-on-deployment-frequency)
+     - [36. AI Usage vs Lead Time](#36-ai-usage-vs-lead-time-analysis)
+   - [Dashboard Yerleştirme ve Layout](#dashboard-yerleştirme-ve-layout)
+   - [Filtreleme ve Interactivity](#filtreleme-ve-interactivity)
 
-### 9. [Kullanım Örnekleri ve Senaryolar](#kullanım-örnekleri-ve-senaryolar)
-- Senaryo 1: Yeni Ekip Üyesinin Performans Takibi
-- Senaryo 2: Sprint Retrospective için Veri Analizi
-- Senaryo 3: AI Kullanımının Performansa Etkisi
-- Senaryo 4: Haftalık Takım Toplantısı
+9. [💼 Kullanım Örnekleri ve Senaryolar](#kullanım-örnekleri-ve-senaryolar)
+   - [Senaryo 1: Yeni Ekip Üyesi Takibi](#senaryo-1-yeni-ekip-üyesinin-performans-takibi)
+   - [Senaryo 2: Sprint Retrospective](#senaryo-2-sprint-retrospective-için-veri-analizi)
+   - [Senaryo 3: AI Etkisi Analizi](#senaryo-3-ai-kullanımının-performansa-etkisi)
+   - [Senaryo 4: Haftalık Takım Toplantısı](#senaryo-4-haftalık-takım-toplantısı)
 
-### 10. [Script'ler ve Veri Toplama](#scriptler-ve-veri-toplama)
-- Script Çalıştırma Sırası
-- Otomatik Çalıştırma
-- Performans İpuçları
+10. [🔧 Script'ler ve Veri Toplama](#scriptler-ve-veri-toplama)
+    - [Script Çalıştırma Sırası](#script-çalıştırma-sırası)
+    - [Otomatik Çalıştırma](#otomatik-çalıştırma)
+      - [Cron Job Örneği](#cron-job-örneği-linuxmacos)
+      - [Task Scheduler (Windows)](#task-scheduler-windows)
+    - [Performans İpuçları](#performans-i̇puçları)
 
-### 11. [Sorun Giderme](#sorun-giderme)
-- Elasticsearch Bağlantı Hatası
-- SQL Server Bağlantı Hatası
-- Cursor API Hatası
-- Hata Ayıklama
+11. [🔍 Sorun Giderme](#sorun-giderme)
+    - [Elasticsearch Bağlantı Hatası](#elasticsearch-bağlantı-hatası)
+    - [SQL Server Bağlantı Hatası](#sql-server-bağlantı-hatası)
+    - [Cursor API Hatası](#cursor-api-hatası)
+    - [Hata Ayıklama](#hata-ayıklama)
 
-### 12. [Güvenlik ve En İyi Pratikler](#güvenlik-ve-en-i̇yi-pratikler)
-- Güvenlik Notları
-- Dashboard Kullanma En İyi Pratikleri
-- Önemli Metrikler Hızlı Referans
+12. [🔒 Güvenlik ve En İyi Pratikler](#güvenlik-ve-en-i̇yi-pratikler)
+    - [Güvenlik Notları](#güvenlik-notları)
+    - [Dashboard Kullanma En İyi Pratikleri](#dashboard-kullanma-en-i̇yi-pratikleri)
+      - [Günlük İnceleme](#günlük-i̇nceleme)
+      - [Haftalık Review](#haftalık-review)
+      - [Aylık Analiz](#aylık-analiz)
+    - [Önemli Metrikler Hızlı Referans](#önemli-metrikler-hızlı-referans)
+
+13. [🎓 Özet](#özet)
+
+14. [📞 İletişim ve Destek](#i̇letişim-ve-destek)
 
 ---
 
