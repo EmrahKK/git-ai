@@ -9,15 +9,82 @@
 
 ## 📑 İçindekiler
 
-1. [Genel Bakış](#genel-bakış)
-2. [Proje Yapısı ve Mimari](#proje-yapısı-ve-mimari)
-3. [Hızlı Başlangıç ve Kurulum](#hızlı-başlangıç-ve-kurulum)
-4. [Veri Yapıları ve Kategoriler](#veri-yapıları-ve-kategoriler)
-5. [Metrikler Rehberi](#metrikler-rehberi)
-6. [Dashboard Görselleri](#dashboard-görselleri)
-7. [Kullanım Örnekleri ve Senaryolar](#kullanım-örnekleri-ve-senaryolar)
-8. [Script'ler ve Veri Toplama](#scriptler-ve-veri-toplama)
-9. [Sorun Giderme](#sorun-giderme)
+### 1. [Genel Bakış](#genel-bakış)
+- Veri Kaynakları
+- Önemli Not
+- Amaç
+
+### 2. [Proje Yapısı ve Mimari](#proje-yapısı-ve-mimari)
+- Mimari Diyagram
+- Klasör Yapısı
+
+### 3. [Hızlı Başlangıç ve Kurulum](#hızlı-başlangıç-ve-kurulum)
+- Gereksinimler
+- Kurulum Adımları
+
+### 4. [Veri Yapıları ve Kategoriler](#veri-yapıları-ve-kategoriler)
+- Git Commit Veri Yapısı
+- Alan Açıklamaları
+
+### 5. [Commit Kategorileri](#commit-kategorileri)
+- Refactor (Yeniden Yapılandırma)
+- New Work (Yeni Çalışma)
+- Help Others (Başkalarına Yardım)
+- Churn/Rework (Sık Değişiklik/Yeniden Çalışma)
+- Kategori Dağılımı İdeali
+
+### 6. [Kategorizasyon Algoritmaları](#kategorizasyon-algoritmaları)
+- **6.1** [Dosya Kategorizasyon Akışı](#dosya-kategorizasyon-akışı)
+  - Algoritma Mantığı
+  - Karar Ağacı
+  - Formül ve Hesaplamalar
+- **6.2** [Commit Kategorizasyon Akışı](#commit-kategorizasyon-akışı)
+  - Ağırlıklı Skorlama Sistemi
+  - Formül ve Örnek Hesaplamalar
+
+### 7. [Metrikler Rehberi](#metrikler-rehberi)
+- **7.1** Git Commit Metrikleri
+  - Commit Efficiency (cefficiency)
+  - Commit Impact
+  - Productive Score
+- **7.2** DORA Metrikleri
+  - Deployment Frequency
+  - Lead Time for Changes
+  - Change Failure Rate
+- **7.3** Cursor AI Metrikleri
+  - Acceptance Rate
+  - Cursor Score
+
+### 8. [Dashboard Görselleri](#dashboard-görselleri)
+- **8.1** Git Commit Görselleri (15 adet)
+- **8.2** Developer Performance Görselleri (9 adet)
+- **8.3** AI Metrikleri Görselleri (2 adet)
+- **8.4** DORA Metrikleri Görselleri (8 adet)
+- **8.5** İleri Analiz Görselleri (2 adet)
+- **8.6** Dashboard Yerleştirme ve Layout
+- **8.7** Filtreleme ve Interactivity
+
+### 9. [Kullanım Örnekleri ve Senaryolar](#kullanım-örnekleri-ve-senaryolar)
+- Senaryo 1: Yeni Ekip Üyesinin Performans Takibi
+- Senaryo 2: Sprint Retrospective için Veri Analizi
+- Senaryo 3: AI Kullanımının Performansa Etkisi
+- Senaryo 4: Haftalık Takım Toplantısı
+
+### 10. [Script'ler ve Veri Toplama](#scriptler-ve-veri-toplama)
+- Script Çalıştırma Sırası
+- Otomatik Çalıştırma
+- Performans İpuçları
+
+### 11. [Sorun Giderme](#sorun-giderme)
+- Elasticsearch Bağlantı Hatası
+- SQL Server Bağlantı Hatası
+- Cursor API Hatası
+- Hata Ayıklama
+
+### 12. [Güvenlik ve En İyi Pratikler](#güvenlik-ve-en-i̇yi-pratikler)
+- Güvenlik Notları
+- Dashboard Kullanma En İyi Pratikleri
+- Önemli Metrikler Hızlı Referans
 
 ---
 
@@ -363,6 +430,384 @@ Bir commit'te 5 dosya değişmiş olsun:
 - Churn/Rework: 2 × 4 = 8
 
 **Sonuç**: Commit kategorisi = **New Work**
+
+---
+
+## 🔬 Kategorizasyon Algoritmaları
+
+Bu bölüm, `gitstats.py` script'inde kullanılan kategorizasyon algoritmalarının detaylı açıklamasını içerir.
+
+### 6.1 Dosya Kategorizasyon Akışı
+
+Her dosya değişikliği, commit içinde bağımsız olarak kategorize edilir. `categorize_file()` fonksiyonu aşağıdaki mantıkla çalışır:
+
+#### Algoritma Mantığı
+
+```python
+def categorize_file(file_stat, commit_author, commit_date, commit_hash, parent_hashes):
+    """
+    Bir dosya değişikliğini kategorize eder.
+    
+    Parametreler:
+    - file_stat: Dosya istatistikleri (insertions, deletions, file path)
+    - commit_author: Commit'i yapan kişi
+    - commit_date: Commit tarihi (Unix timestamp)
+    - commit_hash: Commit SHA
+    - parent_hashes: Parent commit'lerin SHA'ları
+    
+    Kategoriler:
+    - New Work: Yeni dosya veya sadece ekleme yapılan değişiklikler
+    - Refactor: Eski kodun (>3 hafta) büyük ölçekli iyileştirilmesi
+    - Help Others: Başka geliştiricinin yakın zamandaki koduna müdahale
+    - Churn/Rework: Diğer durumlar (kendi yakın zamandaki kodunu değiştirme)
+    """
+```
+
+#### Karar Ağacı
+
+```
+                    Dosya Değişikliği
+                           |
+                           v
+                  ┌─────────────────┐
+                  │ Dosya geçmişi   │
+                  │ var mı?         │
+                  └────────┬────────┘
+                           |
+            ┌──────────────┴──────────────┐
+            |                             |
+          HAYIR                         EVET
+            |                             |
+            v                             v
+      ┌──────────┐              ┌─────────────────┐
+      │ New Work │              │ Zaman farkı     │
+      └──────────┘              │ hesapla         │
+                                └────────┬────────┘
+                                         |
+                    ┌────────────────────┴────────────────────┐
+                    |                                         |
+              > 3 hafta                                  <= 3 hafta
+                    |                                         |
+                    v                                         v
+        ┌───────────────────────┐              ┌─────────────────────┐
+        │ Toplam değişiklik     │              │ Son author ==       │
+        │ > 10 satır mı?        │              │ Mevcut author?      │
+        └──────────┬────────────┘              └──────────┬──────────┘
+                   |                                       |
+         ┌─────────┴─────────┐                  ┌─────────┴─────────┐
+         |                   |                  |                   |
+       EVET                HAYIR              EVET                HAYIR
+         |                   |                  |                   |
+         v                   v                  v                   v
+    ┌──────────┐    ┌──────────────┐    ┌─────────────┐    ┌──────────────┐
+    │ Refactor │    │ Churn/Rework │    │ Sadece      │    │ Help Others  │
+    └──────────┘    └──────────────┘    │ ekleme mi?  │    └──────────────┘
+                                         └──────┬──────┘
+                                                |
+                                      ┌─────────┴─────────┐
+                                      |                   |
+                                    EVET                HAYIR
+                                      |                   |
+                                      v                   v
+                                 ┌──────────┐    ┌──────────────┐
+                                 │ New Work │    │ Churn/Rework │
+                                 └──────────┘    └──────────────┘
+```
+
+#### Formül ve Hesaplamalar
+
+**1. Zaman Farkı Hesaplaması**
+
+```python
+refactor_threshold = 3 * 7 * 24 * 60 * 60  # 3 hafta = 1,814,400 saniye
+
+time_diff = commit_date - last_modification_date
+
+# Eşik kontrolü
+if time_diff > refactor_threshold:
+    # 3 haftadan eski
+else:
+    # 3 hafta içinde
+```
+
+**2. Refactor Kriterleri**
+
+```python
+# Koşul 1: Zaman farkı > 3 hafta
+time_diff > 1_814_400  # saniye
+
+# Koşul 2: Toplam değişiklik > 10 satır
+total_changes = insertions + deletions
+total_changes > 10
+
+# Sonuç:
+if (time_diff > threshold) AND (total_changes > 10):
+    category = 'Refactor'
+```
+
+**3. Help Others Kriterleri**
+
+```python
+# Koşul 1: Zaman farkı <= 3 hafta
+time_diff <= 1_814_400
+
+# Koşul 2: Farklı yazar
+last_author != current_commit_author
+
+# Sonuç:
+if (time_diff <= threshold) AND (last_author != current_author):
+    category = 'Help Others'
+```
+
+**4. New Work Kriterleri**
+
+```python
+# Durum 1: Dosya geçmişi yok (yeni dosya)
+if not last_author or not last_date:
+    category = 'New Work'
+
+# Durum 2: Sadece ekleme yapılmış (silme yok)
+if has_additions and not has_deletions:
+    category = 'New Work'
+```
+
+#### Örnekler
+
+**Örnek 1: Refactor**
+```
+Dosya: api/UserService.cs
+Son değişiklik: 25 gün önce
+Son yazar: John Doe
+Mevcut yazar: John Doe
+Değişiklik: +15 satır, -12 satır (toplam: 27 satır)
+
+Mantık:
+✓ Zaman farkı (25 gün) > 3 hafta (21 gün)
+✓ Toplam değişiklik (27) > 10 satır
+→ Kategori: Refactor
+```
+
+**Örnek 2: Help Others**
+```
+Dosya: components/Button.tsx
+Son değişiklik: 2 gün önce
+Son yazar: Jane Smith
+Mevcut yazar: John Doe
+Değişiklik: +5 satır, -3 satır
+
+Mantık:
+✓ Zaman farkı (2 gün) <= 3 hafta
+✓ Farklı yazar (Jane → John)
+→ Kategori: Help Others
+```
+
+**Örnek 3: New Work**
+```
+Dosya: utils/NewHelper.ts
+Son değişiklik: -
+Son yazar: -
+Mevcut yazar: John Doe
+Değişiklik: +50 satır, -0 satır
+
+Mantık:
+✓ Dosya geçmişi yok (yeni dosya)
+→ Kategori: New Work
+```
+
+**Örnek 4: Churn/Rework**
+```
+Dosya: services/PaymentService.cs
+Son değişiklik: 1 gün önce
+Son yazar: John Doe
+Mevcut yazar: John Doe
+Değişiklik: +8 satır, -6 satır
+
+Mantık:
+✓ Zaman farkı (1 gün) <= 3 hafta
+✓ Aynı yazar
+✗ Sadece ekleme değil (silme de var)
+→ Kategori: Churn/Rework
+```
+
+---
+
+### 6.2 Commit Kategorizasyon Akışı
+
+Bir commit'in genel kategorisi, içindeki **tüm dosya kategorilerinin ağırlıklı skorlaması** ile belirlenir.
+
+#### Ağırlıklı Skorlama Sistemi
+
+Her kategori için önceden tanımlanmış ağırlık değerleri vardır:
+
+```python
+category_weights = {
+    'Refactor': 8,        # En yüksek değer
+    'New Work': 6,
+    'Help Others': 5,
+    'Churn/Rework': 4     # En düşük değer
+}
+```
+
+#### Algoritma
+
+```python
+def determine_commit_category(category_counts):
+    """
+    Commit kategorisini ağırlıklı skorlama ile belirler.
+    
+    Parametreler:
+    - category_counts: Her kategoriden kaç dosya olduğunu içeren dictionary
+      Örnek: {'New Work': 3, 'Refactor': 1, 'Churn/Rework': 2}
+    
+    Returns:
+    - En yüksek ağırlıklı skora sahip kategori
+    """
+    weighted_scores = {}
+    
+    for category, weight in category_weights.items():
+        file_count = category_counts.get(category, 0)
+        weighted_scores[category] = file_count * weight
+    
+    # En yüksek skora sahip kategoriyi seç
+    commit_category = max(weighted_scores, key=weighted_scores.get)
+    
+    return commit_category
+```
+
+#### Formül
+
+```
+Kategori Skoru = Dosya Sayısı × Kategori Ağırlığı
+
+Commit Kategorisi = max(Kategori Skorları)
+```
+
+Matematiksel gösterim:
+
+```
+S(Refactor) = n_refactor × 8
+S(New Work) = n_newwork × 6
+S(Help Others) = n_helpothers × 5
+S(Churn/Rework) = n_churn × 4
+
+Commit_Category = argmax(S(Refactor), S(New Work), S(Help Others), S(Churn/Rework))
+```
+
+#### Örnek Hesaplamalar
+
+**Örnek 1: Basit Durum**
+
+```
+Commit: abc123
+Dosya değişiklikleri:
+- File1.cs → New Work
+- File2.cs → New Work
+- File3.cs → New Work
+
+Hesaplama:
+S(New Work) = 3 × 6 = 18
+S(Refactor) = 0 × 8 = 0
+S(Help Others) = 0 × 5 = 0
+S(Churn/Rework) = 0 × 4 = 0
+
+Sonuç: Commit kategorisi = New Work (skor: 18)
+```
+
+**Örnek 2: Karışık Durum**
+
+```
+Commit: def456
+Dosya değişiklikleri:
+- File1.cs → New Work
+- File2.cs → New Work
+- File3.cs → Refactor
+- File4.cs → Churn/Rework
+- File5.cs → Churn/Rework
+
+Hesaplama:
+S(New Work) = 2 × 6 = 12
+S(Refactor) = 1 × 8 = 8
+S(Help Others) = 0 × 5 = 0
+S(Churn/Rework) = 2 × 4 = 8
+
+Sonuç: Commit kategorisi = New Work (skor: 12)
+```
+
+**Örnek 3: Refactor Dominant**
+
+```
+Commit: ghi789
+Dosya değişiklikleri:
+- File1.cs → Refactor
+- File2.cs → Refactor
+- File3.cs → New Work
+- File4.cs → Churn/Rework
+
+Hesaplama:
+S(Refactor) = 2 × 8 = 16
+S(New Work) = 1 × 6 = 6
+S(Help Others) = 0 × 5 = 0
+S(Churn/Rework) = 1 × 4 = 4
+
+Sonuç: Commit kategorisi = Refactor (skor: 16)
+```
+
+**Örnek 4: Eşitlik Durumu**
+
+```
+Commit: jkl012
+Dosya değişiklikleri:
+- File1.cs → Refactor
+- File2.cs → New Work
+- File3.cs → New Work
+
+Hesaplama:
+S(Refactor) = 1 × 8 = 8
+S(New Work) = 2 × 6 = 12
+S(Help Others) = 0 × 5 = 0
+S(Churn/Rework) = 0 × 4 = 0
+
+Sonuç: Commit kategorisi = New Work (skor: 12)
+```
+
+**Örnek 5: Çok Dosyalı Commit**
+
+```
+Commit: mno345
+Dosya değişiklikleri:
+- File1.cs → New Work
+- File2.cs → New Work
+- File3.cs → New Work
+- File4.cs → Refactor
+- File5.cs → Help Others
+- File6.cs → Churn/Rework
+- File7.cs → Churn/Rework
+- File8.cs → Churn/Rework
+
+Hesaplama:
+S(New Work) = 3 × 6 = 18
+S(Refactor) = 1 × 8 = 8
+S(Help Others) = 1 × 5 = 5
+S(Churn/Rework) = 3 × 4 = 12
+
+Sonuç: Commit kategorisi = New Work (skor: 18)
+```
+
+#### Ağırlık Sistemi Mantığı
+
+Ağırlık değerleri, kategorilerin **iş değerini** ve **kod kalitesine katkısını** yansıtır:
+
+| Kategori | Ağırlık | Mantık |
+|----------|---------|--------|
+| **Refactor** | 8 | En yüksek değer - Kod kalitesini artırır, teknik borcu azaltır |
+| **New Work** | 6 | Yüksek değer - Yeni özellikler ve değer üretir |
+| **Help Others** | 5 | Orta değer - Takım işbirliği ve bilgi paylaşımı |
+| **Churn/Rework** | 4 | En düşük değer - Potansiyel kalite problemi göstergesi |
+
+Bu ağırlıklandırma sayesinde:
+- ✅ Az sayıda **Refactor** bile commit kategorisini etkileyebilir
+- ✅ Çok sayıda **Churn/Rework** olsa bile, birkaç **New Work** dosyası kategoriyi değiştirebilir
+- ✅ **Kalite odaklı** değişikliklere öncelik verilir
 
 ---
 
@@ -1852,7 +2297,9 @@ python gitstats.py --dry-run ...
 
 ---
 
-## 🔒 Güvenlik Notları
+## 🔒 Güvenlik ve En İyi Pratikler
+
+### Güvenlik Notları
 
 ⚠️ **ÖNEMLİ**:
 
@@ -1868,9 +2315,7 @@ python gitstats.py --dry-run ...
    - Sensitive bilgi içerebilirler
    - Production'da log level'i ayarlayın
 
----
-
-## 📈 Dashboard Kullanma En İyi Pratikleri
+### Dashboard Kullanma En İyi Pratikleri
 
 ### Günlük İnceleme
 - [ ] Dün yapılan commit'leri gözden geçir
@@ -1889,9 +2334,7 @@ python gitstats.py --dry-run ...
 - [ ] AI impact'i ölç ve raporla
 - [ ] İyileştirme aksiyonlarını planla
 
----
-
-## 📋 Önemli Metrikler Hızlı Referans
+### Önemli Metrikler Hızlı Referans
 
 | Metrik | İdeal Değer | Kritik Eşik |
 |--------|-------------|-------------|
