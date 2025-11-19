@@ -42,6 +42,48 @@ Bu proje, yazılım geliştirme ekiplerinin verimliliğini ve AI araçlarının 
 - DORA metriklerini takip ederek sürekli iyileştirme alanlarını belirlemek
 - Takım ve proje bazında karşılaştırmalı analizler yapmak
 
+### Dashboard Görselleri
+
+![](images/f-commit-efficiency.png)
+
+Geliştirici performans metrikleri: Geliştirici için commit, AI kullanım ve DORA verilerini içeren özet KPI kartları ve detaylı performans sıralaması tablosu.
+
+![](images/f-project-commits.png)
+
+Proje ve repository analizi: Commit dağılımları, kategori oranları, geliştirici sıralamaları ve aylık aktivite trendlerini gösteren çok boyutlu görselleştirme paneli.
+
+![](images/f-dora-lead-time-average-by-product.png)
+
+Dora metrikleri için ürün ve takım bazında ortalama teslim süreleri ile aylık trend değişimlerini renkli performans göstergeleriyle karşılaştırmalı görselleştirme.
+
+![](images/f-dora-metrics-product-performance-chart.png)
+
+DORA ve AI korelasyon analizi: Ürün ve takım performans bubble chart'ları ile AI kullanımının deployment frekansı ve lead time üzerindeki etkisini gösteren scatter plot'lar.
+
+![](images/f-ai-impact-on-deployment-frequency.png)
+
+AI etki analizi: Haftalık AI kullanıcı sayısı ve deployment frekansı, günlük commit-AI kabul trendi, geliştirici ve AI performans skorlarının zaman serisi görselleştirmesi.
+
+![](images/f-developer-performance-matrix-ai-score-vs-commit-score.png)
+
+Geliştirici performans matrisi: AI ve commit skorlarına göre dört kadran sınıflandırması ile aktivite-verimlilik korelasyonunu gösteren efficiency sweet spots analizi.
+
+![](images/f-performance-vs-activity-correlation-efficiency-sweet-spots.png)
+
+Verimlilik sweet spot analizi: Genel aktivite ve AI aktivitesinin performans skorlarıyla korelasyonu, optimal verimlilik bölgelerini gösteren çift scatter plot karşılaştırması.
+
+![](images/f-file-types-heavy-ai-users-vs-no-ai-users.png)
+
+AI kullanım karşılaştırması: Yoğun AI kullanan ve kullanmayan geliştiricilerin dosya tipi değişiklikleri ile kod verimliliği, commit etkisi ve süre metriklerinin karşılaştırmalı analizi.
+
+![](images/f-developer-performance-transition-matrix.png)
+
+Geliştirici performans geçişleri: Haftalık performans kategorileri arası akış diyagramı ve geçiş olasılıklarını gösteren matris ile geliştiricilerin seviye değişimlerinin görselleştirilmesi.
+
+![](images/f-performance-distribution-analysis.png)
+
+Performans dağılım analizi: Commit ve AI skorlarının histogram ve yoğunluk eğrileriyle kategorik dağılımı, ortalama değerler ve performans seviyelerinin bell curve görselleştirmesi.
+
 ---
 
 ## 🏗️ Proje Yapısı ve Mimari
